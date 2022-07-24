@@ -4,6 +4,5 @@ model/
 loss/
 data/
 MNIST/
-result/
 test/
 .DS_Store
