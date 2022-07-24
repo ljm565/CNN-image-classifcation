@@ -205,7 +205,7 @@ class Trainer:
         
         # concatenate all testset for t-sne and results
         phase = 'test'
-        all_data, ids = [], set()
+        all_data, gt, ids = [], [], set()
         with torch.no_grad():
             total_loss, total_acc = 0, 0
             self.model.eval()
@@ -221,8 +221,10 @@ class Trainer:
                 total_acc += acc.item()*batch
 
                 all_data.append(x.detach().cpu())
+                gt.append(y.detach().cpu())
 
             all_data = torch.cat(all_data, dim=0)
+            gt = torch.cat(gt, dim=0)
             epoch_loss = total_loss/len(self.dataloaders[phase].dataset)
             epoch_acc = total_acc/len(self.dataloaders[phase].dataset)
             print('{} loss: {:4f}, acc: {:4f}\n'.format(phase, epoch_loss, epoch_acc))
@@ -236,5 +238,8 @@ class Trainer:
             ids.add(id)
         ids = list(ids)
         test_samples = torch.cat([all_data[id].unsqueeze(0) for id in ids], dim=0).to(self.device)
+        test_samples_gt = torch.cat([gt[id].unsqueeze(0) for id in ids], dim=0).to(self.device)
         output = self.model(test_samples)
         output = torch.argmax(output, dim=1)
+        print('ground truth: {}'.format(test_samples_gt))
+        print('prediction: {}'.format(output))
