@@ -97,9 +97,11 @@ CNN에 대한 설명은 [Convolutional Neural Network (CNN)](https://ljm565.gith
 
 ## 결과
 * CNN 결과<br><br>
-<img src="result/CNN_MNIST_20epochs_loss.png" width="100%"><br><br>
+<img src="result/img1.png" width="100%"><br><br>
 Test set loss: 0.042665<br>
-Test set acc: 0.989600
+Test set acc: 0.989600<br><br>
+* MNIST 예측 결과<br><br>
+<img src="result/img2.jpg" width="100%">
 <br><br><br>
 
 
