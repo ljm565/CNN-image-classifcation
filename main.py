@@ -46,7 +46,6 @@ def main(config_path:Config, args:ArgumentParser):
     trainer = Trainer(config, device, args.mode, args.cont)
 
     if args.mode == 'train':
-        os.makedirs(base_path+'result', exist_ok=True)
         loss_data_path = config.loss_data_path
         print('Start training...\n')
         models, loss_data = trainer.train()
