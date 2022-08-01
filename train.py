@@ -203,7 +203,7 @@ class Trainer:
             print('The number of results that you want to see are larger than total test set')
             raise AssertionError
         
-        # concatenate all testset for t-sne and results
+        # predict MNIST test set 
         phase = 'test'
         all_data, gt, ids = [], [], set()
         with torch.no_grad():
