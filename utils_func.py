@@ -1,9 +1,7 @@
 import torch
-from torchvision.utils import make_grid, save_image
 import os
 from PIL import Image
 from tqdm import tqdm
-import matplotlib.pyplot as plt
 
 
 def save_checkpoint(file, model, optimizer):
