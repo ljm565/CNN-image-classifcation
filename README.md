@@ -104,9 +104,3 @@ CNN에 대한 설명은 [Convolutional Neural Network (CNN)](https://ljm565.gith
 * MNIST test set 예측 결과<br><br>
     <img src="result/img2.jpg" width="80%">
     <br><br><br>
-
-
-## License
-© 2022. Jun-Min Lee. All rights reserved.<br>
-ljm56897@gmail.com, ljm565@kaist.ac.kr, ljm565@naver.com
-
