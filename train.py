@@ -5,6 +5,7 @@ from torch.utils.data import DataLoader, random_split
 import torchvision.datasets as dsets
 import torchvision.transforms as transforms
 import copy
+import random
 import time
 import pickle
 import math
@@ -232,11 +233,8 @@ class Trainer:
 
         
         
-        while 1:
-            if len(ids) == result_num:
-                break
-            id = np.random.randint(1, high=all_data.size(0))
-            ids.add(id)
+        while len(ids) != result_num:
+            ids.add(random.randrange(all_data.size(0)))
         ids = list(ids)
         test_samples = torch.cat([all_data[id].unsqueeze(0) for id in ids], dim=0).to(self.device)
         test_samples_gt = torch.cat([gt[id].unsqueeze(0) for id in ids], dim=0).to(self.device)
