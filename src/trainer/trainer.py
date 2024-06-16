@@ -88,12 +88,11 @@ class Trainer:
             return model
 
         # init model and tokenizer
-        resume_success = False
         do_resume = mode == 'resume' or (mode == 'validation' and self.resume_path)
         model = get_model(config, self.device)
 
         # resume model or resume model after applying peft
-        if do_resume and not resume_success:
+        if do_resume:
             model = _resume_model(self.resume_path, self.device, config.is_rank_zero)
 
         # init ddp
