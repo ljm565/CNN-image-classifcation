@@ -7,6 +7,7 @@ Please refer to the following instructions to utilize custom datasets.
 If you want to train on the MNIST dataset, simply set the `MNIST_train` value in the `config/config.yaml` file to `True` as follows.
 ```yaml
 MNIST_train: True       
+class_num: 10
 MNIST:
     path: data/
     MNIST_valset_proportion: 0.2 
@@ -22,6 +23,7 @@ If you want to train your custom dataset, set the `MNIST_train` value in the `co
 You may require to implement your custom dataloader codes in `src/utils/data_utils.py`.
 ```yaml
 MNIST_train: False       
+class_num: {$NUMBER_OF_CUSTOM_DATA_CLASSES}        
 MNIST:
     path: data/
     MNIST_valset_proportion: 0.2 

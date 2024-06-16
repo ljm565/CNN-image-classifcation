@@ -6,6 +6,7 @@ Custom 데이터를 이용하기 위해서는 아래 설명을 참고하시기 �
 MNIST 데이터를 학습하고싶다면 아래처럼 `config/config.yaml`의 `MNIST_train`을 `True`로 설정하면 됩니다.
 ```yaml
 MNIST_train: True       
+class_num: 10
 MNIST:
     path: data/
     MNIST_valset_proportion: 0.2 
@@ -21,6 +22,7 @@ CUSTOM:
 다만 `src/utils/data_utils.py`에 custom dataloader를 구현해야할 수 있습니다.
 ```yaml
 MNIST_train: False
+class_num: {$NUMBER_OF_CUSTOM_DATA_CLASSES}        
 MNIST:
     path: data/
     MNIST_valset_proportion: 0.2 
