@@ -103,7 +103,6 @@ class Trainer:
 
 
     def do_train(self):
-        fake_list = []
         self.train_cur_step = -1
         self.train_time_start = time.time()
         
