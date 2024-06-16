@@ -1,16 +1,15 @@
 import torch
 import torch.nn as nn
-from config import Config
 
 
 
 class CNN(nn.Module):
-    def __init__(self, config:Config, color_channel:int):
+    def __init__(self, config):
         super(CNN, self).__init__()
         self.height = config.height
         self.width = config.width
-        self.label = config.label
-        self.color_channel = color_channel
+        self.label = config.class_num
+        self.color_channel = config.color_channel
 
         self.conv1 = nn.Sequential(
             nn.Conv2d(in_channels=self.color_channel, out_channels=32, kernel_size=7, stride=1, padding=0),

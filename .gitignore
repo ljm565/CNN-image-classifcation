@@ -1,8 +1,5 @@
 .vscode/
-__pycache__/
-model/
-loss/
-data/
-MNIST/
-test/
 .DS_Store
+__pycache__/
+outputs/
+data/
