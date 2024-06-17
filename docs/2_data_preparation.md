@@ -23,7 +23,7 @@ If you want to train your custom dataset, set the `MNIST_train` value in the `co
 You may require to implement your custom dataloader codes in `src/utils/data_utils.py`.
 ```yaml
 MNIST_train: False       
-class_num: {$NUMBER_OF_CUSTOM_DATA_CLASSES}        
+class_num: ${NUMBER_OF_CUSTOM_DATA_CLASSES}        
 MNIST:
     path: data/
     MNIST_valset_proportion: 0.2 

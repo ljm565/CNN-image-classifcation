@@ -53,7 +53,7 @@ common: ['train_loss', 'train_acc', 'validation_loss', 'validation_acc']
 `src/run/train.py`를 실행시키기 위한 몇 가지 argument가 있습니다.
 * [`-c`, `--config`]: 학습 수행을 위한 config file 경로.
 * [`-m`, `--mode`]: [`train`, `resume`] 중 하나를 선택.
-* [`-r`, `--resume_model_dir`]: mode가 `resume`일 때 모델 경로. `{$project}/{$name}`까지의 경로만 입력하면, 자동으로 `{$project}/{$name}/weights/`의 모델을 선택하여 resume을 수행.
+* [`-r`, `--resume_model_dir`]: mode가 `resume`일 때 모델 경로. `${project}/${name}`까지의 경로만 입력하면, 자동으로 `${project}/${name}/weights/`의 모델을 선택하여 resume을 수행.
 * [`-l`, `--load_model_type`]: [`metric`, `loss`, `last`] 중 하나를 선택.
     * `metric`(default): Valdiation accuracy가 최대일 때 모델을 resume.
     * `loss`: Valdiation loss가 최소일 때 모델을 resume.
@@ -68,6 +68,6 @@ common: ['train_loss', 'train_acc', 'validation_loss', 'validation_acc']
 python3 src/run/train.py --config configs/config.yaml --mode train
 
 # training from resumed model
-python3 src/run/train.py --config config/config.yaml --mode resume --resume_model_dir {$project}/{$name}
+python3 src/run/train.py --config config/config.yaml --mode resume --resume_model_dir ${project}/${name}
 ```
-모델 학습이 끝나면 `{$project}/{$name}/weights`에 체크포인트가 저장되며, `{$project}/{$name}/args.yaml`에 학습 config가 저장됩니다.
+모델 학습이 끝나면 `${project}/${name}/weights`에 체크포인트가 저장되며, `${project}/${name}/args.yaml`에 학습 config가 저장됩니다.

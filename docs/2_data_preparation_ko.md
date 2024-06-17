@@ -22,7 +22,7 @@ CUSTOM:
 다만 `src/utils/data_utils.py`에 custom dataloader를 구현해야할 수 있습니다.
 ```yaml
 MNIST_train: False
-class_num: {$NUMBER_OF_CUSTOM_DATA_CLASSES}        
+class_num: ${NUMBER_OF_CUSTOM_DATA_CLASSES}        
 MNIST:
     path: data/
     MNIST_valset_proportion: 0.2 
