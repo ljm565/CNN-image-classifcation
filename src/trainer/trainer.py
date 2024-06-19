@@ -204,7 +204,7 @@ class Trainer:
         with torch.no_grad():
             if self.is_rank_zero:
                 if not is_training_now:
-                    self.all_data, self.gt, self.ids = [], [], set()
+                    self.all_data, self.gt = [], []
 
                 val_loader = self.dataloaders[phase]
                 nb = len(val_loader)
