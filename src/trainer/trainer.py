@@ -246,7 +246,7 @@ class Trainer:
         
 
     def cal_acc(self, phase, result_num):
-        if result_num > len(self.dataloaders['test'].dataset):
+        if result_num > len(self.dataloaders[phase].dataset):
             LOGGER.info(colorstr('red', 'The number of results that you want to see are larger than total test set'))
             sys.exit()
 
