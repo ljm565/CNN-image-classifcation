@@ -40,9 +40,6 @@ batch_size: 128
 epochs: 20
 lr: 0.001
 
-# prediction result visualzation config
-result_num: 10                          # number of prediction results to be shown
-
 # logging config
 common: ['train_loss', 'train_acc', 'validation_loss', 'validation_acc']
 ```

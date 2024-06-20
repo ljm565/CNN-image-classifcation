@@ -10,7 +10,7 @@ There are several arguments for running `src/run/cal_acc.py`:
     * `loss`: Resume the model with the minimum validation loss.
     * `last`: Resume the model saved at the last epoch.
 * [`-d`, `--dataset_type`]: (default: `test`) Choose one of [`train`, `validation`, `test`].
-
+* [`-n`, `--result_num`]: (default: `10`) The number of random data to visualize.
 
 #### 1.2 Command
 `src/run/cal_acc.py` file is used to calculate accuracy of the model with the following command:
