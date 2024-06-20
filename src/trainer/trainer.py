@@ -255,8 +255,8 @@ class Trainer:
         self.gt = torch.cat(self.gt, dim=0)
 
         ids = random.sample(range(self.all_data.size(0)), result_num)
-        test_samples = torch.cat([self.all_data[id].unsqueeze(0) for id in ids], dim=0).to(self.device)
-        test_samples_gt = torch.cat([self.gt[id].unsqueeze(0) for id in ids], dim=0).tolist()
+        test_samples = self.all_data[ids].to(self.device)
+        test_samples_gt = self.gt[ids].to(self.device).tolist()
         output = self.model(test_samples)
         output = torch.argmax(output, dim=1).tolist()
         LOGGER.info('ground truth: {}'.format(test_samples_gt))
